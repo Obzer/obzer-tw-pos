@@ -3,6 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/Obzer/obzer-tw-pos.git"
+  },
+  "author": "chenyiguang",
+  "license": "MIT",
+  "bugs": "https://github.com/Obzer/obzer-tw-pos/issues",
+  "homepage": "https://github.com/Obzer/obzer-tw-pos#readme",
+  "devDependencies": {
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "should": "^8.2.2"
+  },
+  "scripts": {
+    "test": " ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly"
   }
 }

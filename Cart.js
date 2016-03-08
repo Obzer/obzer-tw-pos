@@ -9,11 +9,18 @@ var Cart = function() {
 
 //往购物车添加商品
 Cart.prototype.addItem = function(barcode) {
+  var _barcode = barcode;
+  var lineIndex = _barcode.indexOf('-');
+  if (lineIndex != -1) _barcode = barcode.substring(0, lineIndex)
+  if (!Store[_barcode]) throw new Error('no pruducts find!');
   this.barcodeList.push(barcode);
+  return this;
 }
 
 //生成订单
 Cart.prototype.createOrder = function() {
+  if (this.barcodeList.length < 1) throw new Error(
+    'you must buy one or more pruducts');
   var products = {};
   var order = new Order();
   this.barcodeList.forEach(function(barcode) {

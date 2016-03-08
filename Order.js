@@ -27,7 +27,7 @@ Order.prototype.print = function() {
     if (product.discount && product.discount.free && payment.freeCount) {
       self.discountAct[product.discount.code].isActive = true;
       self.discountAct[product.discount.code].text += '名称: ' + product.name +
-        ', 数量: ' + payment.freeCount + '个\n';
+        ', 数量: ' + payment.freeCount + product.unit + '\n';
     }
     text += '\n';
   })
@@ -46,7 +46,7 @@ Order.prototype.print = function() {
   text += '共计: ' + self.totalAmount.toFixed(2) + '(元)\n';
   text += '节省: ' + self.totalSaveMoney.toFixed(2) + '(元)\n';
   text += '**********************';
-  console.log(text);
+  return text;
 }
 
 module.exports = Order;
