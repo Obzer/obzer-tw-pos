@@ -1,5 +1,8 @@
 # obzer-tw-pos
 
+[![Build status](https://img.shields.io/travis/Obzer/obzer-tw-pos.svg?style=flat-square)](https://travis-ci.org/Obzer/obzer-tw-pos)
+[![Coverage Status](https://img.shields.io/coveralls/Obzer/obzer-tw-pos.svg?style=flat-square)](https://coveralls.io/repos/Obzer/obzer-tw-pos)
+
 [作业地址](https://jinshuju.net/f/n0ddSe)
 
 #### 思路
