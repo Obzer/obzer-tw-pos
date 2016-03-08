@@ -1,7 +1,6 @@
 var should = require('should');
 var Cart = require('../index').Cart;
 var Product = require('../index').Product;
-var Order = require('../index').Order;
 var Discount = require('../index').Discount;
 
 describe('test order', function() {
@@ -45,7 +44,7 @@ describe('test order', function() {
   it('print order with free should be success',
     function() {
       var order = new Cart().addItem('ITEM04-2').createOrder();
-      // console.log(order.print());
+      console.log(order.print());
       order.should.have.property('totalAmount', 16);
       order.should.have.property('totalSaveMoney', 8);
     })
@@ -54,7 +53,8 @@ describe('test order', function() {
     function() {
       var order = new Cart().addItem('ITEM04-2').addItem('ITEM04').addItem(
         'ITEM01').createOrder();
-      // console.log(order.print());
+      var text = order.print()
+      console.log(text);
       order.should.have.property('totalAmount', 27);
       order.should.have.property('totalSaveMoney', 8);
     })
@@ -63,7 +63,8 @@ describe('test order', function() {
     function() {
       var order = new Cart().addItem('ITEM04-2').addItem('ITEM04').addItem(
         'ITEM01').addItem('ITEM05-4').createOrder();
-      // console.log(order.print());
+      var text = order.print()
+      console.log(text);
       order.should.have.property('totalAmount', 67);
       order.should.have.property('totalSaveMoney', 18);
     })
@@ -72,7 +73,8 @@ describe('test order', function() {
     function() {
       var order = new Cart().addItem('ITEM04-2').addItem('ITEM04').addItem(
         'ITEM01').addItem('ITEM05-4').addItem('ITEM03-4').createOrder();
-      // console.log(order.print());
+      var text = order.print()
+      console.log(text);
       order.should.have.property('totalAmount', 77);
       order.should.have.property('totalSaveMoney', 28);
     })
